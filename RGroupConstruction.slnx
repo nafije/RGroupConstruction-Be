@@ -1,0 +1,10 @@
+<Solution>
+  <Project Path="RGroupConstruction.API/RGroupConstruction.API.csproj" />
+  <Project Path="RGroupConstruction.Application/RGroupConstruction.Application.csproj" />
+  <Project Path="RGroupConstruction.Domain/RGroupConstruction.Domain.csproj" />
+  <Project Path="RGroupConstruction.Infrastructure/RGroupConstruction.Infrastructure.csproj" />
+  <Project Path="RGroupConstruction.IntegrationTests/RGroupConstruction.IntegrationTests.csproj" />
+  <Project Path="RGroupConstruction.Logging/RGroupConstruction.Logging.csproj" />
+  <Project Path="RGroupConstruction.Migrations/RGroupConstruction.Migrations.csproj" />
+  <Project Path="RGroupConstruction.UnitTests/RGroupConstruction.UnitTests.csproj" />
+</Solution>

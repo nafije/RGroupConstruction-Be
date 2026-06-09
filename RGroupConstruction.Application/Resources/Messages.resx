@@ -1,0 +1,751 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="metadata">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" />
+							</xsd:sequence>
+							<xsd:attribute name="name" use="required" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="assembly">
+						<xsd:complexType>
+							<xsd:attribute name="alias" type="xsd:string" />
+							<xsd:attribute name="name" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+
+	<!-- ===== EXCEPTION ===== -->
+	<data name="Exception_JwtSecretKeyNotConfigured">
+		<value>JWT SecretKey is not configured.</value>
+	</data>
+	<data name="Exception_HangfireConnectionRequired">
+		<value>Hangfire requires a database connection. Please configure either 'HangfireConnection' or 'DefaultConnection' in appsettings.json.</value>
+	</data>
+	<data name="Exception_ConnectionStringNotFound">
+		<value>ConnectionString or DefaultConnection not found in configuration.</value>
+	</data>
+	<data name="Exception_ConnectionStringNotFoundPostgres">
+		<value>ConnectionString or DefaultConnection not found in configuration. Please configure PostgreSQL connection string.</value>
+	</data>
+	<data name="Exception_InvalidToken">
+		<value>Invalid token.</value>
+	</data>
+	<data name="Exception_UserIdNotFound">
+		<value>User ID not found.</value>
+	</data>
+
+	<!-- ===== RESULT ===== -->
+	<data name="Result_ValidationFailed" xml:space="preserve">
+    <value>Validation failed.</value>
+  </data>
+	<data name="Result_UnexpectedError" xml:space="preserve">
+    <value>An unexpected error occurred.</value>
+  </data>
+	<data name="Result_Unauthorized" xml:space="preserve">
+    <value>You are not authorized to perform this action.</value>
+  </data>
+	<data name="Result_NotFound" xml:space="preserve">
+    <value>The requested resource was not found.</value>
+  </data>
+	<data name="Result_Conflict" xml:space="preserve">
+    <value>A conflict occurred with the current state of the resource.</value>
+  </data>
+	<data name="Result_Forbidden" xml:space="preserve">
+    <value>You do not have permission to perform this action.</value>
+  </data>
+
+	<!-- ===== VALIDATION ===== -->
+	<data name="Validation_LoginRequired" xml:space="preserve">
+    <value>Login is required.</value>
+  </data>
+	<data name="Validation_PasswordRequired" xml:space="preserve">
+    <value>Password is required.</value>
+  </data>
+	<data name="Validation_PasswordMinLength6" xml:space="preserve">
+    <value>Password must be at least 6 characters long.</value>
+  </data>
+	<data name="Validation_EmailRequired" xml:space="preserve">
+    <value>Email is required.</value>
+  </data>
+	<data name="Validation_EmailInvalid" xml:space="preserve">
+    <value>Email format is invalid.</value>
+  </data>
+	<data name="Validation_TokenRequired" xml:space="preserve">
+    <value>Token is required.</value>
+  </data>
+	<data name="Validation_TitleMaxLength200" xml:space="preserve">
+    <value>Title must not exceed 200 characters.</value>
+  </data>
+	<data name="Validation_TitleRequired" xml:space="preserve">
+    <value>Title is required.</value>
+  </data>
+	<data name="Validation_LanguageCodeRequired" xml:space="preserve">
+    <value>Language code is required.</value>
+  </data>
+	<data name="Validation_LanguageCodeSupported" xml:space="preserve">
+    <value>The provided language code is not supported.</value>
+  </data>
+	<data name="Validation_IdRequired" xml:space="preserve">
+    <value>Id is required.</value>
+  </data>
+	<data name="Validation_FullNameRequired" xml:space="preserve">
+    <value>Full name is required.</value>
+  </data>
+	<data name="Validation_NameMaxLength50" xml:space="preserve">
+    <value>Name must not exceed 50 characters.</value>
+  </data>
+	<data name="Validation_AddressRequired" xml:space="preserve">
+    <value>Address is required.</value>
+  </data>
+	<data name="Validation_AtLeastOneTranslationRequired" xml:space="preserve">
+    <value>At least one translation is required.</value>
+  </data>
+	<data name="Validation_TranslationNameRequired" xml:space="preserve">
+    <value>Translation name is required.</value>
+  </data>
+	<data name="Validation_PhoneNumberRequired" xml:space="preserve">
+    <value>Phone number is required.</value>
+  </data>
+	<data name="Validation_PhoneNumberInvalidInternational" xml:space="preserve">
+    <value>Phone number must be in valid international format (e.g. +355...).</value>
+  </data>
+	<data name="Validation_NameMaxLength200" xml:space="preserve">
+    <value>Name must not exceed 200 characters.</value>
+  </data>
+
+	<!-- ===== AUTH ===== -->
+	<data name="Auth_NotFound" xml:space="preserve">
+    <value>The requested resource was not found.</value>
+  </data>
+	<data name="Auth_AlreadyExists">
+		<value>The resource already exists.</value>
+	</data>
+	<data name="Auth_InvalidOperation">
+		<value>The operation is not valid.</value>
+	</data>
+	<data name="Auth_Unauthorized">
+		<value>You are not authorized to perform this action.</value>
+	</data>
+	<data name="Auth_Forbidden">
+		<value>Access to this resource is forbidden.</value>
+	</data>
+	<data name="Auth_ValidationFailed">
+		<value>Validation failed.</value>
+	</data>
+	<data name="Auth_ConcurrentUpdate">
+		<value>The resource was modified by another user.</value>
+	</data>
+	<data name="Auth_ExternalServiceError">
+		<value>An external service error occurred.</value>
+	</data>
+	<data name="Auth_InvalidArgument">
+		<value>Invalid argument provided.</value>
+	</data>
+	<data name="Auth_DatabaseError">
+		<value>A database error occurred while processing your request.</value>
+	</data>
+	<data name="Auth_UserNotFound">
+		<value>User not found.</value>
+	</data>
+	<data name="Auth_InvalidCredentials" xml:space="preserve">
+    <value>Invalid username or password.</value>
+  </data>
+	<data name="Auth_InvalidToken">
+		<value>The token is invalid.</value>
+	</data>
+	<data name="Auth_TokenExpired">
+		<value>The token has expired.</value>
+	</data>
+	<data name="Auth_RefreshTokenInvalid">
+		<value>The refresh token is invalid.</value>
+	</data>
+	<data name="Auth_RefreshTokenExpired">
+		<value>The refresh token has expired.</value>
+	</data>
+	<data name="Auth_PasswordResetTokenInvalid">
+		<value>The password reset token is invalid.</value>
+	</data>
+	<data name="Auth_PasswordResetTokenExpired">
+		<value>The password reset token has expired.</value>
+	</data>
+	<data name="Auth_EmailNotConfirmed">
+		<value>Email address has not been confirmed.</value>
+	</data>
+	<data name="Auth_EmailAlreadyConfirmed">
+		<value>Email address is already confirmed.</value>
+	</data>
+	<data name="Auth_AccountLocked">
+		<value>This account has been locked.</value>
+	</data>
+	<data name="Auth_AccountSuspended">
+		<value>This account has been suspended.</value>
+	</data>
+	<data name="Auth_TokenBlacklisted">
+		<value>This token has been revoked.</value>
+	</data>
+
+	<!-- ===== API ===== -->
+	<data name="Api_UserNotAuthenticated" xml:space="preserve">
+    <value>User is not authenticated.</value>
+  </data>
+	<data name="Api_InvalidRequest" xml:space="preserve">
+    <value>The request is invalid.</value>
+  </data>
+	<data name="Api_Unauthorized" xml:space="preserve">
+    <value>Unauthorized.</value>
+  </data>
+	<data name="Api_UnauthorizedDetail" xml:space="preserve">
+    <value>You are not authorized to access this resource.</value>
+  </data>
+	<data name="Api_UnauthorizedAccessResource" xml:space="preserve">
+    <value>You do not have permission to access this resource.</value>
+  </data>
+	<data name="Api_ResourceNotFound" xml:space="preserve">
+    <value>The requested resource was not found.</value>
+  </data>
+	<data name="Api_RequestTimeout" xml:space="preserve">
+    <value>Request timed out.</value>
+  </data>
+	<data name="Api_RequestTimeoutDetail" xml:space="preserve">
+    <value>The request took too long to process. Please try again.</value>
+  </data>
+	<data name="Api_InternalServerError" xml:space="preserve">
+    <value>Internal server error.</value>
+  </data>
+	<data name="Api_InternalServerErrorDetail" xml:space="preserve">
+    <value>An unexpected error occurred on the server. Please try again later.</value>
+  </data>
+
+	<!-- ===== PROJECT VALIDATION ===== -->
+	<data name="Project_IdRequired" xml:space="preserve">
+    <value>Project ID is required.</value>
+  </data>
+	<data name="Project_NameRequired" xml:space="preserve">
+    <value>Project name is required.</value>
+  </data>
+	<data name="Project_CityRequired" xml:space="preserve">
+    <value>City is required.</value>
+  </data>
+	<data name="Project_ProjectTypeRequired" xml:space="preserve">
+    <value>Project type is required.</value>
+  </data>
+	<data name="Project_ProjectStatusRequired" xml:space="preserve">
+    <value>Project status is required.</value>
+  </data>
+	<data name="Project_TotalUnitsGraterThan0" xml:space="preserve">
+    <value>Total units must be greater than 0.</value>
+  </data>
+
+	<!-- ===== UNIT VALIDATION ===== -->
+	<data name="Unit_IdRequired" xml:space="preserve">
+    <value>Unit ID is required.</value>
+  </data>
+	<data name="Unit_ProjectIdRequired" xml:space="preserve">
+    <value>Project ID is required for the unit.</value>
+  </data>
+	<data name="Unit_CategoryIdRequired" xml:space="preserve">
+    <value>Category ID is required for the unit.</value>
+  </data>
+	<data name="Unit_RefNumberRequired" xml:space="preserve">
+    <value>Reference number is required.</value>
+  </data>
+	<data name="Unit_StatusRequired" xml:space="preserve">
+    <value>Unit status is required.</value>
+  </data>
+
+	<!-- ===== LAYOUT VALIDATION ===== -->
+	<data name="Layout_IdRequired" xml:space="preserve">
+    <value>Layout ID is required.</value>
+  </data>
+	<data name="Layout_NameRequired" xml:space="preserve">
+    <value>Layout name is required.</value>
+  </data>
+
+	<!-- ===== STATUS VALIDATION ===== -->
+	<data name="Status_IdRequired" xml:space="preserve">
+    <value>Status ID is required.</value>
+  </data>
+	<data name="Status_NameRequired" xml:space="preserve">
+    <value>Status name is required.</value>
+  </data>
+
+	<!-- ===== CATEGORY VALIDATION ===== -->
+	<data name="Category_IdRequired" xml:space="preserve">
+    <value>Category ID is required.</value>
+  </data>
+	<data name="Category_NameRequired" xml:space="preserve">
+    <value>Category name is required.</value>
+  </data>
+
+	<!-- ===== JOB APPLICATION VALIDATION ===== -->
+	<data name="JobApplication_JobIdRequired" xml:space="preserve">
+    <value>Job ID is required.</value>
+  </data>
+	<data name="JobApplication_NameRequired" xml:space="preserve">
+    <value>Full name is required.</value>
+  </data>
+	<data name="JobApplication_PhoneRequired" xml:space="preserve">
+    <value>Phone number is required.</value>
+  </data>
+
+	<!-- ===== DEPARTMENT VALIDATION ===== -->
+	<data name="Department_IdRequired" xml:space="preserve">
+    <value>Department ID is required.</value>
+  </data>
+	<data name="Department_NameRequired" xml:space="preserve">
+    <value>Department name is required.</value>
+  </data>
+
+	<!-- ===== JOB VALIDATION ===== -->
+	<data name="Career_IdRequired" xml:space="preserve">
+    <value>Job ID is required.</value>
+  </data>
+	<data name="Career_TiteRequired" xml:space="preserve">
+    <value>Job title is required.</value>
+  </data>
+	<data name="Career_DepartmentIdRequired" xml:space="preserve">
+    <value>Department ID is required.</value>
+  </data>
+	<data name="Career_EmploymentTypeRequired" xml:space="preserve">
+    <value>Employment type is required.</value>
+  </data>
+
+	<!-- ===== SUCCESS: GENERAL ===== -->
+	<data name="Success_General_OperationCompleted" xml:space="preserve">
+    <value>Operation completed successfully.</value>
+  </data>
+	<data name="Success_General_ResourceCreated" xml:space="preserve">
+    <value>Resource created successfully.</value>
+  </data>
+	<data name="Success_General_ResourceUpdated" xml:space="preserve">
+    <value>Resource updated successfully.</value>
+  </data>
+	<data name="Success_General_ResourceDeleted" xml:space="preserve">
+    <value>Resource deleted successfully.</value>
+  </data>
+
+	<!-- ===== SUCCESS: NOTIFICATION ===== -->
+	<data name="Success_Notification_MarkedRead" xml:space="preserve">
+    <value>Notification marked as read.</value>
+  </data>
+	<data name="Success_Notification_MarkedUnread" xml:space="preserve">
+    <value>Notification marked as unread.</value>
+  </data>
+	<data name="Success_Notification_AllMarkedRead" xml:space="preserve">
+    <value>All notifications marked as read.</value>
+  </data>
+	<data name="Success_Notification_Deleted" xml:space="preserve">
+    <value>Notification deleted successfully.</value>
+  </data>
+
+	<!-- ===== SUCCESS: COMPANY PROFILE ===== -->
+	<data name="Success_CompanyProfile_Added" xml:space="preserve">
+    <value>Company profile added successfully.</value>
+  </data>
+
+	<!-- ===== SUCCESS: SUBSCRIBE ===== -->
+	<data name="Success_Subscribe_Created" xml:space="preserve">
+    <value>Subscription created successfully.</value>
+  </data>
+	<data name="Success_Subscribe_Removed" xml:space="preserve">
+    <value>Subscription removed successfully.</value>
+  </data>
+
+	<!-- ===== SUCCESS: CONTACT ===== -->
+	<data name="Success_Contact_Created" xml:space="preserve">
+    <value>Message sent successfully.</value>
+  </data>
+
+	<!-- ===== SUCCESS: PROJECT ===== -->
+	<data name="Success_Project_Created" xml:space="preserve">
+    <value>Project created successfully.</value>
+  </data>
+	<data name="Success_Project_Updated" xml:space="preserve">
+    <value>Project updated successfully.</value>
+  </data>
+	<data name="Success_Project_Deleted" xml:space="preserve">
+    <value>Project deleted successfully.</value>
+  </data>
+	<data name="Success_Project_FeaturedUpdated" xml:space="preserve">
+    <value>Project featured status updated successfully.</value>
+  </data>
+
+	<!-- ===== SUCCESS: DEPARTMENT ===== -->
+	<data name="Success_Department_Created" xml:space="preserve">
+    <value>Department created successfully.</value>
+  </data>
+	<data name="Success_Department_Updated" xml:space="preserve">
+    <value>Department updated successfully.</value>
+  </data>
+	<data name="Success_Department_Deleted" xml:space="preserve">
+    <value>Department deleted successfully.</value>
+  </data>
+
+	<!-- ===== SUCCESS: JOB ===== -->
+	<data name="Career_Job_Created" xml:space="preserve">
+    <value>Job created successfully.</value>
+  </data>
+	<data name="Career_Job_Updated" xml:space="preserve">
+    <value>Job updated successfully.</value>
+  </data>
+	<data name="Career_Job_Deleted" xml:space="preserve">
+    <value>Job deleted successfully.</value>
+  </data>
+	<data name="Success_Career_CareerStatusUpdated" xml:space="preserve">
+    <value>Job status updated successfully.</value>
+  </data>
+
+	<!-- ===== SUCCESS: JOB APPLICATION ===== -->
+	<data name="Career_JobApplication_Created" xml:space="preserve">
+    <value>Application submitted successfully.</value>
+  </data>
+
+	<!-- ===== SUCCESS: LAYOUT ===== -->
+	<data name="Success_Layout_Created" xml:space="preserve">
+    <value>Layout created successfully.</value>
+  </data>
+	<data name="Success_Layout_Updated" xml:space="preserve">
+    <value>Layout updated successfully.</value>
+  </data>
+	<data name="Success_Layout_Deleted" xml:space="preserve">
+    <value>Layout deleted successfully.</value>
+  </data>
+
+	<!-- ===== SUCCESS: CATEGORY ===== -->
+	<data name="Success_Category_Created" xml:space="preserve">
+    <value>Category created successfully.</value>
+  </data>
+	<data name="Success_Category_Updated" xml:space="preserve">
+    <value>Category updated successfully.</value>
+  </data>
+	<data name="Success_Category_Deleted" xml:space="preserve">
+    <value>Category deleted successfully.</value>
+  </data>
+
+	<!-- ===== SUCCESS: UNIT ===== -->
+	<data name="Success_Unit_Created" xml:space="preserve">
+    <value>Unit created successfully.</value>
+  </data>
+	<data name="Success_Unit_Updated" xml:space="preserve">
+    <value>Unit updated successfully.</value>
+  </data>
+	<data name="Success_Unit_Deleted" xml:space="preserve">
+    <value>Unit deleted successfully.</value>
+  </data>
+
+	<!-- ===== SUCCESS: PARKING ===== -->
+	<data name="Success_Parking_Created" xml:space="preserve">
+    <value>Parking created successfully.</value>
+  </data>
+	<data name="Success_Parking_Updated" xml:space="preserve">
+    <value>Parking updated successfully.</value>
+  </data>
+	<data name="Success_Parking_Deleted" xml:space="preserve">
+    <value>Parking deleted successfully.</value>
+  </data>
+
+	<!-- ===== SUCCESS: ADS ===== -->
+	<data name="Success_Ads_Created" xml:space="preserve">
+    <value>Advertisement created successfully.</value>
+  </data>
+	<data name="Success_Ads_Updated" xml:space="preserve">
+    <value>Advertisement updated successfully.</value>
+  </data>
+	<data name="Success_Ads_Deleted" xml:space="preserve">
+    <value>Advertisement deleted successfully.</value>
+  </data>
+
+	<!-- ===== SUCCESS: STATUS ===== -->
+	<data name="Success_Status_Created" xml:space="preserve">
+    <value>Status created successfully.</value>
+  </data>
+	<data name="Success_Status_Updated" xml:space="preserve">
+    <value>Status updated successfully.</value>
+  </data>
+	<data name="Success_Status_Deleted" xml:space="preserve">
+    <value>Status deleted successfully.</value>
+  </data>
+
+	<!-- ===== SUCCESS: UNIT CLIENT ===== -->
+	<data name="Success_UnitClient_Created" xml:space="preserve">
+    <value>Unit client created successfully.</value>
+  </data>
+	<data name="Success_UnitClient_Updated" xml:space="preserve">
+    <value>Unit client updated successfully.</value>
+  </data>
+	<data name="Success_UnitClient_Deleted" xml:space="preserve">
+    <value>Unit client deleted successfully.</value>
+  </data>
+
+	<!-- ===== ERROR: COMPANY INFO ===== -->
+	<data name="Error_CompanyInfo_NotFound" xml:space="preserve">
+    <value>Company information not found.</value>
+  </data>
+
+	<!-- ===== ERROR: PROJECT ===== -->
+	<data name="Error_Project_ProjectExists" xml:space="preserve">
+    <value>A project with this name already exists.</value>
+  </data>
+	<data name="Error_Project_CreateFailed" xml:space="preserve">
+    <value>Failed to create the project.</value>
+  </data>
+	<data name="Error_Project_NotFound" xml:space="preserve">
+    <value>Project not found.</value>
+  </data>
+	<data name="Error_Project_UpdateFailed" xml:space="preserve">
+    <value>Failed to update the project.</value>
+  </data>
+	<data name="Error_Project_StatusNotFound" xml:space="preserve">
+    <value>Project status not found.</value>
+  </data>
+
+	<!-- ===== ERROR: JOB ===== -->
+	<data name="Error_Jobt_JobExists" xml:space="preserve">
+    <value>A job with this title already exists.</value>
+  </data>
+	<data name="Error_Job_CreateFailed" xml:space="preserve">
+    <value>Failed to create the job.</value>
+  </data>
+	<data name="Error_Job_NotFound" xml:space="preserve">
+    <value>Job not found.</value>
+  </data>
+	<data name="Error_Job_UpdateFailed" xml:space="preserve">
+    <value>Failed to update the job.</value>
+  </data>
+
+	<!-- ===== ERROR: JOB APPLICATION ===== -->
+	<data name="Error_JobApplication_JobNotFound" xml:space="preserve">
+    <value>The job for this application was not found.</value>
+  </data>
+	<data name="Error_JobApplication_CreateFailed" xml:space="preserve">
+    <value>Failed to submit the job application.</value>
+  </data>
+
+	<!-- ===== ERROR: UNIT ===== -->
+	<data name="Error_Unit_UnitExists" xml:space="preserve">
+    <value>A unit with this reference already exists.</value>
+  </data>
+	<data name="Error_Unit_CreateFailed" xml:space="preserve">
+    <value>Failed to create the unit.</value>
+  </data>
+	<data name="Error_Unit_NotFound" xml:space="preserve">
+    <value>Unit not found.</value>
+  </data>
+	<data name="Error_Unit_UpdateFailed" xml:space="preserve">
+    <value>Failed to update the unit.</value>
+  </data>
+	<data name="Error_Unit_ProjectNotFound" xml:space="preserve">
+    <value>The project for this unit was not found.</value>
+  </data>
+	<data name="Error_Unit_CategoryNotFound" xml:space="preserve">
+    <value>The category for this unit was not found.</value>
+  </data>
+	<data name="Error_Unit_LayoutNotFound" xml:space="preserve">
+    <value>The layout for this unit was not found.</value>
+  </data>
+
+	<!-- ===== ERROR: PARKING ===== -->
+	<data name="Error_Unit_ParkingExists" xml:space="preserve">
+    <value>A parking entry with this reference already exists.</value>
+  </data>
+	<data name="Error_Parking_ProjectNotFound" xml:space="preserve">
+    <value>The project for this parking was not found.</value>
+  </data>
+
+	<!-- ===== ERROR: LAYOUT ===== -->
+	<data name="Error_Layout_LayoutExists" xml:space="preserve">
+    <value>A layout with this name already exists.</value>
+  </data>
+	<data name="Error_Layout_CreateFailed" xml:space="preserve">
+    <value>Failed to create the layout.</value>
+  </data>
+	<data name="Error_Layout_NotFound" xml:space="preserve">
+    <value>Layout not found.</value>
+  </data>
+	<data name="Error_Layout_UpdateFailed" xml:space="preserve">
+    <value>Failed to update the layout.</value>
+  </data>
+
+	<!-- ===== ERROR: CATEGORY ===== -->
+	<data name="Error_Category_CategoryExists" xml:space="preserve">
+    <value>A category with this name already exists.</value>
+  </data>
+	<data name="Error_Category_CreateFailed" xml:space="preserve">
+    <value>Failed to create the category.</value>
+  </data>
+	<data name="Error_Category_NotFound" xml:space="preserve">
+    <value>Category not found.</value>
+  </data>
+	<data name="Error_Category_UpdateFailed" xml:space="preserve">
+    <value>Failed to update the category.</value>
+  </data>
+
+	<!-- ===== ERROR: EMAIL ===== -->
+	<data name="Error_Email_SendFailed" xml:space="preserve">
+    <value>Failed to send the email.</value>
+  </data>
+
+	<!-- ===== ERROR: NOTIFICATION ===== -->
+	<data name="Error_Notification_NotFound" xml:space="preserve">
+    <value>Notification not found.</value>
+  </data>
+	<data name="Error_Notification_NotFoundOrForbidden" xml:space="preserve">
+    <value>Notification not found or access is forbidden.</value>
+  </data>
+	<data name="Error_Notification_AdminFailed" xml:space="preserve">
+    <value>Failed to process the admin notification.</value>
+  </data>
+
+	<!-- ===== ERROR: ADS ===== -->
+	<data name="Error_Ads_NotFound" xml:space="preserve">
+    <value>Advertisement not found.</value>
+  </data>
+	<data name="Error_Ads_InvalidImageBase64" xml:space="preserve">
+    <value>The provided image data is not valid base64.</value>
+  </data>
+	<data name="Error_Ads_InvalidVideoBase64" xml:space="preserve">
+    <value>The provided video data is not valid base64.</value>
+  </data>
+	<data name="Error_Ads_NotFoundById" xml:space="preserve">
+    <value>Advertisement with the specified ID was not found.</value>
+  </data>
+
+	<!-- ===== ERROR: SUBSCRIBE ===== -->
+	<data name="Error_Subscribe_AlreadySubscribed" xml:space="preserve">
+    <value>You are already subscribed.</value>
+  </data>
+	<data name="Error_Subscribe_NotSubscribed" xml:space="preserve">
+    <value>You are not subscribed.</value>
+  </data>
+	<data name="Error_Subscribe_InvalidToken" xml:space="preserve">
+    <value>The subscription token is invalid.</value>
+  </data>
+
+	<!-- ===== ERROR: DEPARTMENT ===== -->
+	<data name="Error_Department_DepartmentExists" xml:space="preserve">
+    <value>A department with this name already exists.</value>
+  </data>
+	<data name="Error_Department_CreateFailed" xml:space="preserve">
+    <value>Failed to create the department.</value>
+  </data>
+	<data name="Error_Department_NotFound" xml:space="preserve">
+    <value>Department not found.</value>
+  </data>
+	<data name="Error_Department_UpdateFailed" xml:space="preserve">
+    <value>Failed to update the department.</value>
+  </data>
+
+	<!-- ===== ERROR: STATUS ===== -->
+	<data name="Error_Status_StatusExists" xml:space="preserve">
+    <value>A status with this name already exists.</value>
+  </data>
+	<data name="Error_Status_CreateFailed" xml:space="preserve">
+    <value>Failed to create the status.</value>
+  </data>
+	<data name="Error_Status_NotFound" xml:space="preserve">
+    <value>Status not found.</value>
+  </data>
+	<data name="Error_Status_UpdateFailed" xml:space="preserve">
+    <value>Failed to update the status.</value>
+  </data>
+
+	<!-- ===== ERROR: UNIT CLIENT ===== -->
+	<data name="Error_UnitClientt_UnitClientExists" xml:space="preserve">
+    <value>A unit client record already exists.</value>
+  </data>
+	<data name="Error_UnitClient_CreateFailed" xml:space="preserve">
+    <value>Failed to create the unit client record.</value>
+  </data>
+	<data name="Error_UnitClient_NotFound" xml:space="preserve">
+    <value>Unit client record not found.</value>
+  </data>
+	<data name="Error_UnitClient_UnitNotFound" xml:space="preserve">
+    <value>The unit for this client record was not found.</value>
+  </data>
+	<data name="Error_UnitClient_UpdateFailed" xml:space="preserve">
+    <value>Failed to update the unit client record.</value>
+  </data>
+	<data name="Error_UnitClient_StatusNotFound" xml:space="preserve">
+    <value>The status for this unit client was not found.</value>
+  </data>
+
+	<!-- ===== NOTIFICATION MESSAGES ===== -->
+	<data name="Notification_Subscribe_Subscribed">
+		<value>{0} has subscribed to receive updates on new projects and available jobs.</value>
+	</data>
+	<data name="Notification_Subscribe_Unsubscribed">
+		<value>{0} has unsubscribed from project and available jobs.</value>
+	</data>
+	<data name="Notification_Contact_NewMessage">
+		<value>{0} has sent a message with subject {1}.</value>
+	</data>
+	<!-- Errors -->
+	<data name="Error_City_CityExists" xml:space="preserve">
+  <value>The city already exists.</value>
+</data>
+	<data name="Error_City_CreateFailed" xml:space="preserve">
+  <value>Failed to create the city.</value>
+</data>
+	<data name="Error_City_NotFound" xml:space="preserve">
+  <value>The city was not found.</value>
+</data>
+	<data name="Error_City_UpdateFailed" xml:space="preserve">
+  <value>Failed to update the city.</value>
+</data>
+
+	<!-- Successes -->
+	<data name="Success_City_Created" xml:space="preserve">
+  <value>The city was successfully created.</value>
+</data>
+	<data name="Success_City_Updated" xml:space="preserve">
+  <value>The city was successfully updated.</value>
+</data>
+	<data name="Success_City_Deleted" xml:space="preserve">
+  <value>The city was successfully deleted.</value>
+</data>
+</root>

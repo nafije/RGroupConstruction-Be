@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Handlers\**" />
+    <Content Remove="Handlers\**" />
+    <EmbeddedResource Remove="Handlers\**" />
+    <None Remove="Handlers\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="14.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.5" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="10.1.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RGroupConstruction.Application\RGroupConstruction.Application.csproj" />
+    <ProjectReference Include="..\RGroupConstruction.Infrastructure\RGroupConstruction.Infrastructure.csproj" />
+    <ProjectReference Include="..\RGroupConstruction.Logging\RGroupConstruction.Logging.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="RGroupConstruction.Logging" />
+  </ItemGroup>
+
+</Project>
+

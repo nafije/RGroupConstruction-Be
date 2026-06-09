@@ -1,0 +1,751 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="metadata">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" />
+							</xsd:sequence>
+							<xsd:attribute name="name" use="required" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="assembly">
+						<xsd:complexType>
+							<xsd:attribute name="alias" type="xsd:string" />
+							<xsd:attribute name="name" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+
+	<!-- ===== EXCEPTION ===== -->
+	<data name="Exception_JwtSecretKeyNotConfigured">
+		<value>Çelësi sekret JWT nuk është konfiguruar.</value>
+	</data>
+	<data name="Exception_HangfireConnectionRequired">
+		<value>Hangfire kërkon një lidhje me bazën e të dhënave. Ju lutem konfiguroni 'HangfireConnection' ose 'DefaultConnection' në appsettings.json.</value>
+	</data>
+	<data name="Exception_ConnectionStringNotFound">
+		<value>ConnectionString ose DefaultConnection nuk u gjet në konfigurim.</value>
+	</data>
+	<data name="Exception_ConnectionStringNotFoundPostgres">
+		<value>ConnectionString ose DefaultConnection nuk u gjet në konfigurim. Ju lutem konfiguroni lidhjen e PostgreSQL.</value>
+	</data>
+	<data name="Exception_InvalidToken">
+		<value>Token i pavlefshëm.</value>
+	</data>
+	<data name="Exception_UserIdNotFound">
+		<value>ID e përdoruesit nuk u gjet.</value>
+	</data>
+
+	<!-- ===== RESULT ===== -->
+	<data name="Result_ValidationFailed" xml:space="preserve">
+    <value>Validimi dështoi.</value>
+  </data>
+	<data name="Result_UnexpectedError" xml:space="preserve">
+    <value>Ndodhi një gabim i papritur.</value>
+  </data>
+	<data name="Result_Unauthorized" xml:space="preserve">
+    <value>Nuk jeni të autorizuar të kryeni këtë veprim.</value>
+  </data>
+	<data name="Result_NotFound" xml:space="preserve">
+    <value>Burimi i kërkuar nuk u gjet.</value>
+  </data>
+	<data name="Result_Conflict" xml:space="preserve">
+    <value>Ndodhi një konflikt me gjendjen aktuale të burimit.</value>
+  </data>
+	<data name="Result_Forbidden" xml:space="preserve">
+    <value>Nuk keni leje të kryeni këtë veprim.</value>
+  </data>
+
+	<!-- ===== VALIDATION ===== -->
+	<data name="Validation_LoginRequired" xml:space="preserve">
+    <value>Identifikimi është i detyrueshëm.</value>
+  </data>
+	<data name="Validation_PasswordRequired" xml:space="preserve">
+    <value>Fjalëkalimi është i detyrueshëm.</value>
+  </data>
+	<data name="Validation_PasswordMinLength6" xml:space="preserve">
+    <value>Fjalëkalimi duhet të ketë të paktën 6 karaktere.</value>
+  </data>
+	<data name="Validation_EmailRequired" xml:space="preserve">
+    <value>Email-i është i detyrueshëm.</value>
+  </data>
+	<data name="Validation_EmailInvalid" xml:space="preserve">
+    <value>Formati i email-it është i pavlefshëm.</value>
+  </data>
+	<data name="Validation_TokenRequired" xml:space="preserve">
+    <value>Token-i është i detyrueshëm.</value>
+  </data>
+	<data name="Validation_TitleMaxLength200" xml:space="preserve">
+    <value>Titulli nuk duhet të kalojë 200 karaktere.</value>
+  </data>
+	<data name="Validation_TitleRequired" xml:space="preserve">
+    <value>Titulli është i detyrueshëm.</value>
+  </data>
+	<data name="Validation_LanguageCodeRequired" xml:space="preserve">
+    <value>Kodi i gjuhës është i detyrueshëm.</value>
+  </data>
+	<data name="Validation_LanguageCodeSupported" xml:space="preserve">
+    <value>Kodi i dhënë i gjuhës nuk mbështetet.</value>
+  </data>
+	<data name="Validation_IdRequired" xml:space="preserve">
+    <value>ID është i detyrueshëm.</value>
+  </data>
+	<data name="Validation_FullNameRequired" xml:space="preserve">
+    <value>Emri i plotë është i detyrueshëm.</value>
+  </data>
+	<data name="Validation_NameMaxLength50" xml:space="preserve">
+    <value>Emri nuk duhet të kalojë 50 karaktere.</value>
+  </data>
+	<data name="Validation_AddressRequired" xml:space="preserve">
+    <value>Adresa është e detyrueshme.</value>
+  </data>
+	<data name="Validation_AtLeastOneTranslationRequired" xml:space="preserve">
+    <value>Kërkohet të paktën një përkthim.</value>
+  </data>
+	<data name="Validation_TranslationNameRequired" xml:space="preserve">
+    <value>Emri i përkthimit është i detyrueshëm.</value>
+  </data>
+	<data name="Validation_PhoneNumberRequired" xml:space="preserve">
+    <value>Numri i telefonit është i detyrueshëm.</value>
+  </data>
+	<data name="Validation_PhoneNumberInvalidInternational" xml:space="preserve">
+    <value>Numri i telefonit duhet të jetë në format ndërkombëtar të vlefshëm (p.sh. +355...).</value>
+  </data>
+	<data name="Validation_NameMaxLength200" xml:space="preserve">
+    <value>Emri nuk duhet të kalojë 200 karaktere.</value>
+  </data>
+
+	<!-- ===== AUTH ===== -->
+	<data name="Auth_NotFound" xml:space="preserve">
+    <value>Burimi i kërkuar nuk u gjet.</value>
+  </data>
+	<data name="Auth_AlreadyExists">
+		<value>Burimi ekziston tashmë.</value>
+	</data>
+	<data name="Auth_InvalidOperation">
+		<value>Operacioni nuk është i vlefshëm.</value>
+	</data>
+	<data name="Auth_Unauthorized">
+		<value>Nuk jeni të autorizuar të kryeni këtë veprim.</value>
+	</data>
+	<data name="Auth_Forbidden">
+		<value>Qasja në këtë burim është e ndaluar.</value>
+	</data>
+	<data name="Auth_ValidationFailed">
+		<value>Validimi dështoi.</value>
+	</data>
+	<data name="Auth_ConcurrentUpdate">
+		<value>Burimi u ndryshua nga një përdorues tjetër.</value>
+	</data>
+	<data name="Auth_ExternalServiceError">
+		<value>Ndodhi një gabim në shërbimin e jashtëm.</value>
+	</data>
+	<data name="Auth_InvalidArgument">
+		<value>Argument i pavlefshëm i dhënë.</value>
+	</data>
+	<data name="Auth_DatabaseError">
+		<value>Ndodhi një gabim në bazën e të dhënave gjatë përpunimit të kërkesës.</value>
+	</data>
+	<data name="Auth_UserNotFound">
+		<value>Përdoruesi nuk u gjet.</value>
+	</data>
+	<data name="Auth_InvalidCredentials" xml:space="preserve">
+    <value>Emri i përdoruesit ose fjalëkalimi është i pavlefshëm.</value>
+  </data>
+	<data name="Auth_InvalidToken">
+		<value>Token-i është i pavlefshëm.</value>
+	</data>
+	<data name="Auth_TokenExpired">
+		<value>Token-i ka skaduar.</value>
+	</data>
+	<data name="Auth_RefreshTokenInvalid">
+		<value>Token-i i rifreskimit është i pavlefshëm.</value>
+	</data>
+	<data name="Auth_RefreshTokenExpired">
+		<value>Token-i i rifreskimit ka skaduar.</value>
+	</data>
+	<data name="Auth_PasswordResetTokenInvalid">
+		<value>Token-i i rivendosjes së fjalëkalimit është i pavlefshëm.</value>
+	</data>
+	<data name="Auth_PasswordResetTokenExpired">
+		<value>Token-i i rivendosjes së fjalëkalimit ka skaduar.</value>
+	</data>
+	<data name="Auth_EmailNotConfirmed">
+		<value>Adresa e emailit nuk është konfirmuar.</value>
+	</data>
+	<data name="Auth_EmailAlreadyConfirmed">
+		<value>Adresa e emailit është tashmë e konfirmuar.</value>
+	</data>
+	<data name="Auth_AccountLocked">
+		<value>Ky llogari është bllokuar.</value>
+	</data>
+	<data name="Auth_AccountSuspended">
+		<value>Ky llogari është pezulluar.</value>
+	</data>
+	<data name="Auth_TokenBlacklisted">
+		<value>Ky token është revokuar.</value>
+	</data>
+
+	<!-- ===== API ===== -->
+	<data name="Api_UserNotAuthenticated" xml:space="preserve">
+    <value>Përdoruesi nuk është i autentifikuar.</value>
+  </data>
+	<data name="Api_InvalidRequest" xml:space="preserve">
+    <value>Kërkesa është e pavlefshme.</value>
+  </data>
+	<data name="Api_Unauthorized" xml:space="preserve">
+    <value>Qasje e paautorizuar.</value>
+  </data>
+	<data name="Api_UnauthorizedDetail" xml:space="preserve">
+    <value>Nuk jeni të autorizuar të aksesoni këtë burim.</value>
+  </data>
+	<data name="Api_UnauthorizedAccessResource" xml:space="preserve">
+    <value>Nuk keni leje të aksesoni këtë burim.</value>
+  </data>
+	<data name="Api_ResourceNotFound" xml:space="preserve">
+    <value>Burimi i kërkuar nuk u gjet.</value>
+  </data>
+	<data name="Api_RequestTimeout" xml:space="preserve">
+    <value>Koha e kërkesës ka skaduar.</value>
+  </data>
+	<data name="Api_RequestTimeoutDetail" xml:space="preserve">
+    <value>Kërkesa mori shumë kohë për t'u procesuar. Ju lutem provoni përsëri.</value>
+  </data>
+	<data name="Api_InternalServerError" xml:space="preserve">
+    <value>Gabim i brendshëm i serverit.</value>
+  </data>
+	<data name="Api_InternalServerErrorDetail" xml:space="preserve">
+    <value>Ndodhi një gabim i papritur në server. Ju lutem provoni përsëri më vonë.</value>
+  </data>
+
+	<!-- ===== PROJECT VALIDATION ===== -->
+	<data name="Project_IdRequired" xml:space="preserve">
+    <value>ID e projektit është e detyrueshme.</value>
+  </data>
+	<data name="Project_NameRequired" xml:space="preserve">
+    <value>Emri i projektit është i detyrueshëm.</value>
+  </data>
+	<data name="Project_CityRequired" xml:space="preserve">
+    <value>Qyteti është i detyrueshëm.</value>
+  </data>
+	<data name="Project_ProjectTypeRequired" xml:space="preserve">
+    <value>Lloji i projektit është i detyrueshëm.</value>
+  </data>
+	<data name="Project_ProjectStatusRequired" xml:space="preserve">
+    <value>Statusi i projektit është i detyrueshëm.</value>
+  </data>
+	<data name="Project_TotalUnitsGraterThan0" xml:space="preserve">
+    <value>Numri total i njësive duhet të jetë më i madh se 0.</value>
+  </data>
+
+	<!-- ===== UNIT VALIDATION ===== -->
+	<data name="Unit_IdRequired" xml:space="preserve">
+    <value>ID e njësisë është e detyrueshme.</value>
+  </data>
+	<data name="Unit_ProjectIdRequired" xml:space="preserve">
+    <value>ID e projektit është e detyrueshme për njësinë.</value>
+  </data>
+	<data name="Unit_CategoryIdRequired" xml:space="preserve">
+    <value>ID e kategorisë është e detyrueshme për njësinë.</value>
+  </data>
+	<data name="Unit_RefNumberRequired" xml:space="preserve">
+    <value>Numri i referencës është i detyrueshëm.</value>
+  </data>
+	<data name="Unit_StatusRequired" xml:space="preserve">
+    <value>Statusi i njësisë është i detyrueshëm.</value>
+  </data>
+
+	<!-- ===== LAYOUT VALIDATION ===== -->
+	<data name="Layout_IdRequired" xml:space="preserve">
+    <value>ID e paraqitjes është e detyrueshme.</value>
+  </data>
+	<data name="Layout_NameRequired" xml:space="preserve">
+    <value>Emri i paraqitjes është i detyrueshëm.</value>
+  </data>
+
+	<!-- ===== STATUS VALIDATION ===== -->
+	<data name="Status_IdRequired" xml:space="preserve">
+    <value>ID e statusit është e detyrueshme.</value>
+  </data>
+	<data name="Status_NameRequired" xml:space="preserve">
+    <value>Emri i statusit është i detyrueshëm.</value>
+  </data>
+
+	<!-- ===== CATEGORY VALIDATION ===== -->
+	<data name="Category_IdRequired" xml:space="preserve">
+    <value>ID e kategorisë është e detyrueshme.</value>
+  </data>
+	<data name="Category_NameRequired" xml:space="preserve">
+    <value>Emri i kategorisë është i detyrueshëm.</value>
+  </data>
+
+	<!-- ===== JOB APPLICATION VALIDATION ===== -->
+	<data name="JobApplication_JobIdRequired" xml:space="preserve">
+    <value>ID e vendit të punës është e detyrueshme.</value>
+  </data>
+	<data name="JobApplication_NameRequired" xml:space="preserve">
+    <value>Emri i plotë është i detyrueshëm.</value>
+  </data>
+	<data name="JobApplication_PhoneRequired" xml:space="preserve">
+    <value>Numri i telefonit është i detyrueshëm.</value>
+  </data>
+
+	<!-- ===== DEPARTMENT VALIDATION ===== -->
+	<data name="Department_IdRequired" xml:space="preserve">
+    <value>ID e departamentit është e detyrueshme.</value>
+  </data>
+	<data name="Department_NameRequired" xml:space="preserve">
+    <value>Emri i departamentit është i detyrueshëm.</value>
+  </data>
+
+	<!-- ===== JOB VALIDATION ===== -->
+	<data name="Career_IdRequired" xml:space="preserve">
+    <value>ID e vendit të punës është e detyrueshme.</value>
+  </data>
+	<data name="Career_TiteRequired" xml:space="preserve">
+    <value>Titulli i vendit të punës është i detyrueshëm.</value>
+  </data>
+	<data name="Career_DepartmentIdRequired" xml:space="preserve">
+    <value>ID e departamentit është e detyrueshme.</value>
+  </data>
+	<data name="Career_EmploymentTypeRequired" xml:space="preserve">
+    <value>Lloji i punësimit është i detyrueshëm.</value>
+  </data>
+
+	<!-- ===== SUCCESS: GENERAL ===== -->
+	<data name="Success_General_OperationCompleted" xml:space="preserve">
+    <value>Operacioni u përfundua me sukses.</value>
+  </data>
+	<data name="Success_General_ResourceCreated" xml:space="preserve">
+    <value>Burimi u krijua me sukses.</value>
+  </data>
+	<data name="Success_General_ResourceUpdated" xml:space="preserve">
+    <value>Burimi u përditësua me sukses.</value>
+  </data>
+	<data name="Success_General_ResourceDeleted" xml:space="preserve">
+    <value>Burimi u fshi me sukses.</value>
+  </data>
+
+	<!-- ===== SUCCESS: NOTIFICATION ===== -->
+	<data name="Success_Notification_MarkedRead" xml:space="preserve">
+    <value>Njoftimi u shënua si i lexuar.</value>
+  </data>
+	<data name="Success_Notification_MarkedUnread" xml:space="preserve">
+    <value>Njoftimi u shënua si i palexuar.</value>
+  </data>
+	<data name="Success_Notification_AllMarkedRead" xml:space="preserve">
+    <value>Të gjitha njoftimet u shënuan si të lexuara.</value>
+  </data>
+	<data name="Success_Notification_Deleted" xml:space="preserve">
+    <value>Njoftimi u fshi me sukses.</value>
+  </data>
+
+	<!-- ===== SUCCESS: COMPANY PROFILE ===== -->
+	<data name="Success_CompanyProfile_Added" xml:space="preserve">
+    <value>Profili i kompanisë u shtua me sukses.</value>
+  </data>
+
+	<!-- ===== SUCCESS: SUBSCRIBE ===== -->
+	<data name="Success_Subscribe_Created" xml:space="preserve">
+    <value>Abonimi u krye me sukses.</value>
+  </data>
+	<data name="Success_Subscribe_Removed" xml:space="preserve">
+    <value>Abonimi u hoq me sukses.</value>
+  </data>
+
+	<!-- ===== SUCCESS: CONTACT ===== -->
+	<data name="Success_Contact_Created" xml:space="preserve">
+    <value>Mesazhi u dërgua me sukses.</value>
+  </data>
+
+	<!-- ===== SUCCESS: PROJECT ===== -->
+	<data name="Success_Project_Created" xml:space="preserve">
+    <value>Projekti u krijua me sukses.</value>
+  </data>
+	<data name="Success_Project_Updated" xml:space="preserve">
+    <value>Projekti u përditësua me sukses.</value>
+  </data>
+	<data name="Success_Project_Deleted" xml:space="preserve">
+    <value>Projekti u fshi me sukses.</value>
+  </data>
+	<data name="Success_Project_FeaturedUpdated" xml:space="preserve">
+    <value>Statusi i veçuar i projektit u përditësua me sukses.</value>
+  </data>
+
+	<!-- ===== SUCCESS: DEPARTMENT ===== -->
+	<data name="Success_Department_Created" xml:space="preserve">
+    <value>Departamenti u krijua me sukses.</value>
+  </data>
+	<data name="Success_Department_Updated" xml:space="preserve">
+    <value>Departamenti u përditësua me sukses.</value>
+  </data>
+	<data name="Success_Department_Deleted" xml:space="preserve">
+    <value>Departamenti u fshi me sukses.</value>
+  </data>
+
+	<!-- ===== SUCCESS: JOB ===== -->
+	<data name="Career_Job_Created" xml:space="preserve">
+    <value>Vendi i punës u krijua me sukses.</value>
+  </data>
+	<data name="Career_Job_Updated" xml:space="preserve">
+    <value>Vendi i punës u përditësua me sukses.</value>
+  </data>
+	<data name="Career_Job_Deleted" xml:space="preserve">
+    <value>Vendi i punës u fshi me sukses.</value>
+  </data>
+	<data name="Success_Career_CareerStatusUpdated" xml:space="preserve">
+    <value>Statusi i vendit të punës u përditësua me sukses.</value>
+  </data>
+
+	<!-- ===== SUCCESS: JOB APPLICATION ===== -->
+	<data name="Career_JobApplication_Created" xml:space="preserve">
+    <value>Aplikimi u dërgua me sukses.</value>
+  </data>
+
+	<!-- ===== SUCCESS: LAYOUT ===== -->
+	<data name="Success_Layout_Created" xml:space="preserve">
+    <value>Paraqitja u krijua me sukses.</value>
+  </data>
+	<data name="Success_Layout_Updated" xml:space="preserve">
+    <value>Paraqitja u përditësua me sukses.</value>
+  </data>
+	<data name="Success_Layout_Deleted" xml:space="preserve">
+    <value>Paraqitja u fshi me sukses.</value>
+  </data>
+
+	<!-- ===== SUCCESS: CATEGORY ===== -->
+	<data name="Success_Category_Created" xml:space="preserve">
+    <value>Kategoria u krijua me sukses.</value>
+  </data>
+	<data name="Success_Category_Updated" xml:space="preserve">
+    <value>Kategoria u përditësua me sukses.</value>
+  </data>
+	<data name="Success_Category_Deleted" xml:space="preserve">
+    <value>Kategoria u fshi me sukses.</value>
+  </data>
+
+	<!-- ===== SUCCESS: UNIT ===== -->
+	<data name="Success_Unit_Created" xml:space="preserve">
+    <value>Njësia u krijua me sukses.</value>
+  </data>
+	<data name="Success_Unit_Updated" xml:space="preserve">
+    <value>Njësia u përditësua me sukses.</value>
+  </data>
+	<data name="Success_Unit_Deleted" xml:space="preserve">
+    <value>Njësia u fshi me sukses.</value>
+  </data>
+
+	<!-- ===== SUCCESS: PARKING ===== -->
+	<data name="Success_Parking_Created" xml:space="preserve">
+    <value>Parkingu u krijua me sukses.</value>
+  </data>
+	<data name="Success_Parking_Updated" xml:space="preserve">
+    <value>Parkingu u përditësua me sukses.</value>
+  </data>
+	<data name="Success_Parking_Deleted" xml:space="preserve">
+    <value>Parkingu u fshi me sukses.</value>
+  </data>
+
+	<!-- ===== SUCCESS: ADS ===== -->
+	<data name="Success_Ads_Created" xml:space="preserve">
+    <value>Reklama u krijua me sukses.</value>
+  </data>
+	<data name="Success_Ads_Updated" xml:space="preserve">
+    <value>Reklama u përditësua me sukses.</value>
+  </data>
+	<data name="Success_Ads_Deleted" xml:space="preserve">
+    <value>Reklama u fshi me sukses.</value>
+  </data>
+
+	<!-- ===== SUCCESS: STATUS ===== -->
+	<data name="Success_Status_Created" xml:space="preserve">
+    <value>Statusi u krijua me sukses.</value>
+  </data>
+	<data name="Success_Status_Updated" xml:space="preserve">
+    <value>Statusi u përditësua me sukses.</value>
+  </data>
+	<data name="Success_Status_Deleted" xml:space="preserve">
+    <value>Statusi u fshi me sukses.</value>
+  </data>
+
+	<!-- ===== SUCCESS: UNIT CLIENT ===== -->
+	<data name="Success_UnitClient_Created" xml:space="preserve">
+    <value>Klienti i njësisë u krijua me sukses.</value>
+  </data>
+	<data name="Success_UnitClient_Updated" xml:space="preserve">
+    <value>Klienti i njësisë u përditësua me sukses.</value>
+  </data>
+	<data name="Success_UnitClient_Deleted" xml:space="preserve">
+    <value>Klienti i njësisë u fshi me sukses.</value>
+  </data>
+
+	<!-- ===== ERROR: COMPANY INFO ===== -->
+	<data name="Error_CompanyInfo_NotFound" xml:space="preserve">
+    <value>Informacioni i kompanisë nuk u gjet.</value>
+  </data>
+
+	<!-- ===== ERROR: PROJECT ===== -->
+	<data name="Error_Project_ProjectExists" xml:space="preserve">
+    <value>Një projekt me këtë emër ekziston tashmë.</value>
+  </data>
+	<data name="Error_Project_CreateFailed" xml:space="preserve">
+    <value>Krijimi i projektit dështoi.</value>
+  </data>
+	<data name="Error_Project_NotFound" xml:space="preserve">
+    <value>Projekti nuk u gjet.</value>
+  </data>
+	<data name="Error_Project_UpdateFailed" xml:space="preserve">
+    <value>Përditësimi i projektit dështoi.</value>
+  </data>
+	<data name="Error_Project_StatusNotFound" xml:space="preserve">
+    <value>Statusi i projektit nuk u gjet.</value>
+  </data>
+
+	<!-- ===== ERROR: JOB ===== -->
+	<data name="Error_Jobt_JobExists" xml:space="preserve">
+    <value>Një vend pune me këtë titull ekziston tashmë.</value>
+  </data>
+	<data name="Error_Job_CreateFailed" xml:space="preserve">
+    <value>Krijimi i vendit të punës dështoi.</value>
+  </data>
+	<data name="Error_Job_NotFound" xml:space="preserve">
+    <value>Vendi i punës nuk u gjet.</value>
+  </data>
+	<data name="Error_Job_UpdateFailed" xml:space="preserve">
+    <value>Përditësimi i vendit të punës dështoi.</value>
+  </data>
+
+	<!-- ===== ERROR: JOB APPLICATION ===== -->
+	<data name="Error_JobApplication_JobNotFound" xml:space="preserve">
+    <value>Vendi i punës për këtë aplikim nuk u gjet.</value>
+  </data>
+	<data name="Error_JobApplication_CreateFailed" xml:space="preserve">
+    <value>Dërgimi i aplikimit dështoi.</value>
+  </data>
+
+	<!-- ===== ERROR: UNIT ===== -->
+	<data name="Error_Unit_UnitExists" xml:space="preserve">
+    <value>Një njësi me këtë referencë ekziston tashmë.</value>
+  </data>
+	<data name="Error_Unit_CreateFailed" xml:space="preserve">
+    <value>Krijimi i njësisë dështoi.</value>
+  </data>
+	<data name="Error_Unit_NotFound" xml:space="preserve">
+    <value>Njësia nuk u gjet.</value>
+  </data>
+	<data name="Error_Unit_UpdateFailed" xml:space="preserve">
+    <value>Përditësimi i njësisë dështoi.</value>
+  </data>
+	<data name="Error_Unit_ProjectNotFound" xml:space="preserve">
+    <value>Projekti i kësaj njësie nuk u gjet.</value>
+  </data>
+	<data name="Error_Unit_CategoryNotFound" xml:space="preserve">
+    <value>Kategoria e kësaj njësie nuk u gjet.</value>
+  </data>
+	<data name="Error_Unit_LayoutNotFound" xml:space="preserve">
+    <value>Paraqitja e kësaj njësie nuk u gjet.</value>
+  </data>
+
+	<!-- ===== ERROR: PARKING ===== -->
+	<data name="Error_Unit_ParkingExists" xml:space="preserve">
+    <value>Një parkim me këtë referencë ekziston tashmë.</value>
+  </data>
+	<data name="Error_Parking_ProjectNotFound" xml:space="preserve">
+    <value>Projekti i këtij parkingu nuk u gjet.</value>
+  </data>
+
+	<!-- ===== ERROR: LAYOUT ===== -->
+	<data name="Error_Layout_LayoutExists" xml:space="preserve">
+    <value>Një paraqitje me këtë emër ekziston tashmë.</value>
+  </data>
+	<data name="Error_Layout_CreateFailed" xml:space="preserve">
+    <value>Krijimi i paraqitjes dështoi.</value>
+  </data>
+	<data name="Error_Layout_NotFound" xml:space="preserve">
+    <value>Paraqitja nuk u gjet.</value>
+  </data>
+	<data name="Error_Layout_UpdateFailed" xml:space="preserve">
+    <value>Përditësimi i paraqitjes dështoi.</value>
+  </data>
+
+	<!-- ===== ERROR: CATEGORY ===== -->
+	<data name="Error_Category_CategoryExists" xml:space="preserve">
+    <value>Një kategori me këtë emër ekziston tashmë.</value>
+  </data>
+	<data name="Error_Category_CreateFailed" xml:space="preserve">
+    <value>Krijimi i kategorisë dështoi.</value>
+  </data>
+	<data name="Error_Category_NotFound" xml:space="preserve">
+    <value>Kategoria nuk u gjet.</value>
+  </data>
+	<data name="Error_Category_UpdateFailed" xml:space="preserve">
+    <value>Përditësimi i kategorisë dështoi.</value>
+  </data>
+
+	<!-- ===== ERROR: EMAIL ===== -->
+	<data name="Error_Email_SendFailed" xml:space="preserve">
+    <value>Dërgimi i email-it dështoi.</value>
+  </data>
+
+	<!-- ===== ERROR: NOTIFICATION ===== -->
+	<data name="Error_Notification_NotFound" xml:space="preserve">
+    <value>Njoftimi nuk u gjet.</value>
+  </data>
+	<data name="Error_Notification_NotFoundOrForbidden" xml:space="preserve">
+    <value>Njoftimi nuk u gjet ose qasja është e ndaluar.</value>
+  </data>
+	<data name="Error_Notification_AdminFailed" xml:space="preserve">
+    <value>Procesimi i njoftimit të administratorit dështoi.</value>
+  </data>
+
+	<!-- ===== ERROR: ADS ===== -->
+	<data name="Error_Ads_NotFound" xml:space="preserve">
+    <value>Reklama nuk u gjet.</value>
+  </data>
+	<data name="Error_Ads_InvalidImageBase64" xml:space="preserve">
+    <value>Të dhënat e imazhit të dhëna nuk janë base64 të vlefshëm.</value>
+  </data>
+	<data name="Error_Ads_InvalidVideoBase64" xml:space="preserve">
+    <value>Të dhënat e videos të dhëna nuk janë base64 të vlefshëm.</value>
+  </data>
+	<data name="Error_Ads_NotFoundById" xml:space="preserve">
+    <value>Reklama me ID-në e specifikuar nuk u gjet.</value>
+  </data>
+
+	<!-- ===== ERROR: SUBSCRIBE ===== -->
+	<data name="Error_Subscribe_AlreadySubscribed" xml:space="preserve">
+    <value>Jeni tashmë i abonuar.</value>
+  </data>
+	<data name="Error_Subscribe_NotSubscribed" xml:space="preserve">
+    <value>Nuk jeni i abonuar.</value>
+  </data>
+	<data name="Error_Subscribe_InvalidToken" xml:space="preserve">
+    <value>Token-i i abonimit është i pavlefshëm.</value>
+  </data>
+
+	<!-- ===== ERROR: DEPARTMENT ===== -->
+	<data name="Error_Department_DepartmentExists" xml:space="preserve">
+    <value>Një departament me këtë emër ekziston tashmë.</value>
+  </data>
+	<data name="Error_Department_CreateFailed" xml:space="preserve">
+    <value>Krijimi i departamentit dështoi.</value>
+  </data>
+	<data name="Error_Department_NotFound" xml:space="preserve">
+    <value>Departamenti nuk u gjet.</value>
+  </data>
+	<data name="Error_Department_UpdateFailed" xml:space="preserve">
+    <value>Përditësimi i departamentit dështoi.</value>
+  </data>
+
+	<!-- ===== ERROR: STATUS ===== -->
+	<data name="Error_Status_StatusExists" xml:space="preserve">
+    <value>Një status me këtë emër ekziston tashmë.</value>
+  </data>
+	<data name="Error_Status_CreateFailed" xml:space="preserve">
+    <value>Krijimi i statusit dështoi.</value>
+  </data>
+	<data name="Error_Status_NotFound" xml:space="preserve">
+    <value>Statusi nuk u gjet.</value>
+  </data>
+	<data name="Error_Status_UpdateFailed" xml:space="preserve">
+    <value>Përditësimi i statusit dështoi.</value>
+  </data>
+
+	<!-- ===== ERROR: UNIT CLIENT ===== -->
+	<data name="Error_UnitClientt_UnitClientExists" xml:space="preserve">
+    <value>Një rekord i klientit të njësisë ekziston tashmë.</value>
+  </data>
+	<data name="Error_UnitClient_CreateFailed" xml:space="preserve">
+    <value>Krijimi i rekordeve të klientit të njësisë dështoi.</value>
+  </data>
+	<data name="Error_UnitClient_NotFound" xml:space="preserve">
+    <value>Rekordi i klientit të njësisë nuk u gjet.</value>
+  </data>
+	<data name="Error_UnitClient_UnitNotFound" xml:space="preserve">
+    <value>Njësia për këtë rekord klienti nuk u gjet.</value>
+  </data>
+	<data name="Error_UnitClient_UpdateFailed" xml:space="preserve">
+    <value>Përditësimi i rekordeve të klientit të njësisë dështoi.</value>
+  </data>
+	<data name="Error_UnitClient_StatusNotFound" xml:space="preserve">
+    <value>Statusi i klientit të njësisë nuk u gjet.</value>
+  </data>
+
+	<!-- ===== NOTIFICATION MESSAGES ===== -->
+	<data name="Notification_Subscribe_Subscribed">
+		<value>{0} është abonuar për të marrë informacione mbi projektet dhe punët e reja.</value>
+	</data>
+	<data name="Notification_Subscribe_Unsubscribed">
+		<value>{0} është çregjistruar nga njoftimet për projektet dhe punët e reja.</value>
+	</data>
+	<data name="Notification_Contact_NewMessage">
+		<value>{0} ka dërguar një mesazh me temën {1}.</value>
+	</data>
+	<!-- Errors -->
+	<data name="Error_City_CityExists" xml:space="preserve">
+  <value>Qyteti ekziston tashmë.</value>
+</data>
+	<data name="Error_City_CreateFailed" xml:space="preserve">
+  <value>Krijimi i qytetit dështoi.</value>
+</data>
+	<data name="Error_City_NotFound" xml:space="preserve">
+  <value>Qyteti nuk u gjet.</value>
+</data>
+	<data name="Error_City_UpdateFailed" xml:space="preserve">
+  <value>Përditësimi i qytetit dështoi.</value>
+</data>
+
+	<!-- Successes -->
+	<data name="Success_City_Created" xml:space="preserve">
+  <value>Qyteti u krijua me sukses.</value>
+</data>
+	<data name="Success_City_Updated" xml:space="preserve">
+  <value>Qyteti u përditësua me sukses.</value>
+</data>
+	<data name="Success_City_Deleted" xml:space="preserve">
+  <value>Qyteti u fshi me sukses.</value>
+</data>
+</root>
