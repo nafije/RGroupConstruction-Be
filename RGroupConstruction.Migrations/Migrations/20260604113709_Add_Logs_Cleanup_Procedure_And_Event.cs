@@ -12,27 +12,27 @@ namespace RGroupConstruction.Migrations.Migrations
         {
             // 1. Create Stored Procedure
             migrationBuilder.Sql(@"
-                CREATE PROCEDURE IF NOT EXISTS `ABVConsctuction`.`sp_DeleteAllLogs`()
+                CREATE PROCEDURE IF NOT EXISTS `RGroupSHPK`.`sp_DeleteAllLogs`()
                 BEGIN
-                    TRUNCATE TABLE `ABVConsctuction`.`Logs`;
+                    TRUNCATE TABLE `RGroupSHPK`.`Logs`;
                 END
             ");
 
             // 2. Create Scheduled Event
             migrationBuilder.Sql(@"
-                CREATE EVENT IF NOT EXISTS `ABVConsctuction`.`evt_DeleteAllLogs`
+                CREATE EVENT IF NOT EXISTS `RGroupSHPK`.`evt_DeleteAllLogs`
                 ON SCHEDULE EVERY 1 WEEK
                 STARTS NOW()
                 DO
-                    CALL `ABVConsctuction`.`sp_DeleteAllLogs`();
+                    CALL `RGroupSHPK`.`sp_DeleteAllLogs`();
             ");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.Sql("DROP EVENT IF EXISTS `ABVConsctuction`.`evt_DeleteAllLogs`;");
-            migrationBuilder.Sql("DROP PROCEDURE IF EXISTS `ABVConsctuction`.`sp_DeleteAllLogs`;");
+            migrationBuilder.Sql("DROP EVENT IF EXISTS `RGroupSHPK`.`evt_DeleteAllLogs`;");
+            migrationBuilder.Sql("DROP PROCEDURE IF EXISTS `RGroupSHPK`.`sp_DeleteAllLogs`;");
         }
     }
 }

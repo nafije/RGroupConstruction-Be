@@ -26,7 +26,7 @@ public static class UserSeeder
         IPasswordService passwordService,
         ILogger logger)
     {
-        var adminEmail = "admin@abv.com";
+        var adminEmail = "admin@rgroup.com";
 
         if (await userManager.FindByEmailAsync(adminEmail) is not null)
         {
