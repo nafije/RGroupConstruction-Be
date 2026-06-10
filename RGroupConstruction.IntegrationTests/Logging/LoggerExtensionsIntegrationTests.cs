@@ -53,11 +53,11 @@ public class LoggerExtensionsIntegrationTests
     {
         var logger = new CapturingLogger();
 
-        logger.Info("Created project {ProjectId} for {ProjectName}", 42, "ABV");
+        logger.Info("Created project {ProjectId} for {ProjectName}", 42, "RGroup");
 
         var entry = Assert.Single(logger.Entries);
 
-        Assert.Equal("Created project 42 for \"ABV\"", entry.Message);
+        Assert.Equal("Created project 42 for \"RGroup\"", entry.Message);
         Assert.DoesNotContain("{ProjectId}", entry.Message);
         Assert.DoesNotContain("{ProjectName}", entry.Message);
         Assert.Contains(entry.ScopeProperties, property => property.Key == "ProjectId" && (int)property.Value! == 42);

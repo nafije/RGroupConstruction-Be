@@ -7,13 +7,13 @@ WORKDIR /src
 
 COPY . .
 
-RUN dotnet restore "ABVConstruction.API/ABVConstruction.API.csproj"
-RUN dotnet build "ABVConstruction.API/ABVConstruction.API.csproj" -c Release -o /app/build
+RUN dotnet restore "RGroupConstruction.API/RGroupConstruction.API.csproj"
+RUN dotnet build "RGroupConstruction.API/RGroupConstruction.API.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "ABVConstruction.API/ABVConstruction.API.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "RGroupConstruction.API/RGroupConstruction.API.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "ABVConstruction.API.dll"]
+ENTRYPOINT ["dotnet", "RGroupConstruction.API.dll"]
