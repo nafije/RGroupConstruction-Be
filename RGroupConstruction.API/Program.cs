@@ -94,14 +94,12 @@ try
     });
 
     // Configure the HTTP request pipeline.
-    if (app.Environment.IsDevelopment())
+    app.MapOpenApi();
+    app.UseSwaggerUI(c =>
     {
-        app.MapOpenApi();
-        app.UseSwaggerUI(c =>
-        {
-            c.SwaggerEndpoint("/openapi/v1.json", "RGroupConstruction API");
-        });
-    }
+        c.SwaggerEndpoint("/openapi/v1.json", "RGroupConstruction API");
+        c.RoutePrefix = "swagger";
+    });
     var supportedCultures = new[] { new CultureInfo("sq"), new CultureInfo("en") };
     app.UseRequestLocalization(new RequestLocalizationOptions
     {
