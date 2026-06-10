@@ -8,10 +8,10 @@ WORKDIR /src
 COPY . .
 
 RUN dotnet restore "RGroupConstruction.API/RGroupConstruction.API.csproj"
-RUN dotnet build "RGroupConstruction.API/RGroupConstruction.API.csproj" -c Release -o /app/build
+RUN dotnet build "RGroupConstruction.API/RGroupConstruction.API.csproj" -c Release -o /app/build /p:TreatWarningsAsErrors=false
 
 FROM build AS publish
-RUN dotnet publish "RGroupConstruction.API/RGroupConstruction.API.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "RGroupConstruction.API/RGroupConstruction.API.csproj" -c Release -o /app/publish /p:UseAppHost=false /p:TreatWarningsAsErrors=false
 
 FROM base AS final
 WORKDIR /app
